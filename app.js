@@ -8,6 +8,9 @@ const descElement = document.querySelector(".temperature-description p")
 const locationElement = document.querySelector(".location p")
 const notificationElement = document.querySelector(".notification")
 const dateTimeElement = document.querySelector(".dateTime")
+const topCardElement = document.querySelector(".top-card")
+const humidityElement = document.querySelector(".humidity")
+const windElement = document.querySelector(".wind")
 
 //Our App Data
 
@@ -59,9 +62,34 @@ function displayWeather(){
     tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
     descElement.innerHTML = weather.description;
     locationElement.innerHTML = `${weather.city}, ${weather.country}`;
+
+    
     //dateTimeElement.innerHTML = new Date();
+    if(isDayTime(weather.iconId)){
+        console.log('Day');
+        topCardElement.innerHTML = `<img class="top-card" src="img/day_image.svg"/>`;
+    }else{
+        console.log('Night');
+        topCardElement.innerHTML = `<img class="top-card" src="img/night_image.svg"/>`;
+        
+    }
+    humidityElement.innerHTML = `${weather.humidity}%`;
+    windElement.innerHTML = `${weather.wind}m/s`;
+
+
 
 }
+
+//function to change background
+function isDayTime(icon){
+    if(icon.includes('d')){
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
 
 //Function to Get Weather from our API Provider
 function getWeather(latitude, longitude){
@@ -78,6 +106,8 @@ function getWeather(latitude, longitude){
             weather.iconId = data.weather[0].icon;
             weather.city = data.name;
             weather.country = data.sys.country;
+            weather.humidity = data.main.humidity;
+            weather.wind = data.wind.speed;
         })
         .then(function(){
             displayWeather();
@@ -111,6 +141,8 @@ function renderTime(){
 
     //Date 
     var myDate = new Date();
+
+    console.log(myDate);
     var year = myDate.getYear();
     if(year < 1000 ){
         year +=1900
@@ -120,6 +152,13 @@ function renderTime(){
     var daym = myDate.getDate();
     var daysArray = new Array("Sunday,","Monday,","Tuesday,","Wednesday,","Thursday,","Friday,","Saturday");
     var monthsArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+
+    
+    
+
+    console.log(myDate.toLocaleDateString());
+
 
     //Time
     var currentTime = new Date();
@@ -142,7 +181,7 @@ function renderTime(){
     }
 
     dateTimeElement.textContent = "" +daysArray[day]+ " " +daym+ " " +monthsArray[month]+ " " +year+ " | " +h+ " : " +m+ " : " +s;
-    dateTimeElement.innerText = "" +daysArray[day]+ " " +daym+ " " +monthsArray[month]+ " " +year+ " | " +h+ " : " +m+ " : " +s;
+    dateTimeElement.innerHTML = "" +daysArray[day]+ " " +daym+ " " +monthsArray[month]+ " " +year+ " | " +h+ " : " +m+ " : " +s;
 
     setTimeout("renderTime()",1000);
 }

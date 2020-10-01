@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="font/Rimouski.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body onLoad="renderTime();">
+<body>
     <!--Container-->
     <div class="container">
         <div class="app-title"> 
@@ -16,22 +16,39 @@
         </div>
         <div class="notification"></div>
         <div class="weather-container">
+            <div class="top-card">
+                <img class="top-card" src="" alt="">
+            </div>
+
+        </div>
+        <div class="weather-container">
 
             <div class="weather-icon">
                 <img src="icons/unknown.png" alt="">
             </div>
+
             <div class="temperature-value">
                 <p>- ° <span>C</span></p>
             </div>
             <div class="temperature-description">
                 <p>-</p>
             </div>
+            <div class="weather-details">
+                <p style="margin-left: 70px; margin-right: 100px;display: inline;">Humidity</p>
+                <p style="margin-right: 10px; display: inline;">Wind</p>       
+                
+                    <p class="humidity">-</p>
+                    <p class="wind">-</p>
+                
+            </div>
             <div class="location">
+                <img width="40px" height="40px" style="margin-left: 100px; margin-right: 1px;display: flex;" src="icons/location.svg" alt="">
                 <p>-</p>
             </div>
-            <div class="dateTime">
-                <p>-</p>
-            </div>
+           
+        </div>
+        <div class="dateTime">
+            <p>-</p>
         </div>
     </div> 
     <script src="app.js"></script>

@@ -7,9 +7,9 @@ body{
 }
 
 .container{
-    width: 300px;    
-    background-color: #FFF;
-    
+    width: 350px;    
+    background-color: #F4F9FF;
+    height: 650px;
     display: block;
     margin: 0 auto;
     
@@ -18,7 +18,7 @@ body{
 }
 
 .app-title{
-    width: 300px;
+    width: 350px;
     height: 50px;
     border-radius: 10px 10px 0 0;
 }
@@ -45,13 +45,13 @@ body{
 }
 
 .weather-container{
-    width: 300px;
-    height: 260px;
-    background-color: #F4F9FF;
+    width: 350px;
+    height: 300px;
+    background-color: #FFF;
 }
 
 .weather-icon{
-    width: 300px;
+    width: 350px;
     height: 128px;
 }
 
@@ -59,9 +59,12 @@ body{
     display: block;
     margin: 0 auto;
 }
+.top-card{
+    width: 350px;
+}
 
 .temperature-value{
-    width: 300px;
+    width: 350px;
     height:60px;
 }
 
@@ -94,30 +97,59 @@ body{
     text-align: center;
     font-size: 1.2em;
 }
+.weather-details{
+    display: inline;
+    margin-top: 40px;
+}
+
+.humidity{
+
+    margin-left: 90px;
+    margin-right: 100px;
+    display: inline;
+    padding: 0;
+    color: #293251;
+    font-size: 0.9em;
+}
+
+.wind{
+    margin-left: 17px;
+    margin-right: 10px;
+     display: inline;
+    padding: 0;
+    color: #293251;
+    font-size: 0.9em;
+
+}
 
 .location{
+    padding: 5px;
+    display: inline-flex;
+    text-align: center;
     
 }
 
 .location p{
-    margin: 0;
     padding: 0;
     color: #293251;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 .dateTime{
-    margin-top: 5px;;
     text-align: center;
+    padding-top: 20px;
+
 
 }
 .dateTime p{
-    margin: 0;
+    margin: 10px;
     padding: 0;
     color: #293251;
     text-align: center;
     font-size: 0.8em;
 }
+
+
 
 
 
