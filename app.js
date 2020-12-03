@@ -12,20 +12,22 @@ const windElement = document.querySelector(".wind")
 
 //Our App Data
 
-//weather Objects
+//Weather Objects
 const weather = {};
 
 weather.temperature = {
     unit: "celsius"
+
 }
 
 //Some constants
 const KELVIN = 273;
 
-//API Key
+//Weather API Key
 
 
 const key = "6131d2b350b3cbfa938668a585cc056b";
+
 
 //Checking if browser supports geolocaiton
 if ('geolocation' in navigator) {
