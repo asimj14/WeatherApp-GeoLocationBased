@@ -43,7 +43,7 @@ function setPosition(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
 
-    //calling function to get weather 
+    //Calling function to get weather in base of the current latitude & longitude
     getWeather(latitude, longitude);
 
 }
